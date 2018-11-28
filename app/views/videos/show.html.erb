@@ -1,0 +1,39 @@
+<p id="notice">
+    <%= notice %>
+</p>
+
+<div class="row">
+
+    <div class="col m3">
+    <div class="collection">
+
+        <% @videos.each do |video| %>
+            <%= link_to video.title, video, :class => 'collection-item' %>
+                <% end %>
+
+    </div>
+    </div>
+
+    <div class="col m9">
+
+        <div class="row">
+            <div class="col m10">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1501159771943-cc9027db4d8b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05daa85f6d47b2bac2ccfcaa9c55b2b9&auto=format&fit=crop&w=750&q=80">
+                        <div class="card-action">
+                            <h3><%=@video.title %>
+                            </h3>
+                            <p> <%= @video.description%></p>
+                        </div>
+                        <div class="card-action">
+                            <%= link_to "Previous", @prev_video if !@prev_video.nil? %>
+                            <span class="right">
+                        <%= link_to "Next", @next_video if !@next_video.nil? %>
+                        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>

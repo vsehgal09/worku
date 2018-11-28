@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Code4Newbies</title>
+    <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+
+            <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+                    <!-- Compiled and minified CSS -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+                    <!-- Compiled and minified JavaScript -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- THIS IS THE NAVBAR -->
+
+    <nav>
+    <div class="nav-wrapper">
+      <%= link_to "Logo", root_path, :class => "brand-logo" %>
+      <ul class="right">
+        <li><a href="<%=pages_about_path%>"><i class="large material-icons">person</i></a></li>
+       <li><a href="<%=pages_contact_path%>"><i class="large material-icons">location_on</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <!-- THIS IS FOR THE SCREEN -->
+
+    <div class="row">
+        <div class="col m10 offset-m1">
+            <%= yield %>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+</body>
+
+</html>
